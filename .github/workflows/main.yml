@@ -25,11 +25,12 @@ jobs:
             npm install -g newman-reporter-html
      - name: Run the postman collection
        run:  |
+            mkdir -p newman
             newman run "In warrantyflow CSV_Data.postman_collection.json" \
-            -e QA.postman_environment.json \
-            -d Testdata.csv \
-            -r cli,htmlextra \
-            --reporter-htmlextra-export newman/report.html
+              -e QA.postman_environment.json \
+              -d Testdata.csv \
+              -r cli,htmlextra \
+              --reporter-htmlextra-export newman/report.html
      - name: Newman report
        if: always()
        uses: actions/upload-artifact@v7.0.0
