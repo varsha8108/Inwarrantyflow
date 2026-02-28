@@ -24,11 +24,7 @@ jobs:
             npm install -g newman
             npm install -g newman-reporter-html
      - name: Run the postman collection
-       run: |
-       newman run "In warrantyflow CSV_Data.postman_collection.json" \
-         -e QA.postman_environment.json \
-         -d Testdata.csv \
-         -r cli,htmlextra
+  run: newman run "In warrantyflow CSV_Data.postman_collection.json" -e QA.postman_environment.json -d Testdata.csv -r cli,htmlextra
 
 
 
