@@ -25,7 +25,11 @@ jobs:
             npm install -g newman-reporter-html
      - name: Run the postman collection
        run: newman run "In warrantyflow CSV_Data.postman_collection.json" -e QA.postman_environment.json -d Testdata.csv -r cli,htmlextra
-
+     - name: Newman report
+       uses: actions/upload-artifact@v7.0.0
+       with:
+         name: Newman report
+         path: newman/*.html
 
 
 
