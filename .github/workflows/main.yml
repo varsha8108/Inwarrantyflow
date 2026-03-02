@@ -45,7 +45,7 @@ jobs:
          github_token: ${{ secrets.GITHUB_TOKEN }}
          publish_dir: newman/
 
-      - name: Send email
+     - name: Send email
         if: always()
         uses: dawidd6/action-send-mail@v11
         with:
