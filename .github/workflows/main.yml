@@ -36,7 +36,7 @@ jobs:
        uses: actions/upload-artifact@v7.0.0
        with:
          name: Newman report
-         path: newman/report.html
+         path: newman/index.html
 
      - name: Creating github page branch
        if: always()
