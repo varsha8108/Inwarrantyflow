@@ -44,7 +44,24 @@ jobs:
        with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
          publish_dir: newman/
-         
+
+      - name: Send email
+        if: always()
+        uses: dawidd6/action-send-mail@v11
+        with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.EMAIL_USERNAME }}
+        password: ${{secrets.EMAIL_PASSWORD }}
+        subject: Inwarrenty flow execution notification
+        to: varsha8108@gmail.com
+        from: ${{secrets.EMAIL_USERNAME }}
+        body: |
+              Hi,
+              Please find the status of the postman test execution of the inwarrenty flow execution with URL: https://varsha8108.github.io/Inwarrantyflow/
+              
+        
+
 
 
 
