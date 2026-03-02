@@ -30,7 +30,7 @@ jobs:
               -e QA.postman_environment.json \
               -d Testdata.csv \
               -r cli,htmlextra \
-              --reporter-htmlextra-export newman/report.html
+              --reporter-htmlextra-export newman/index.html
      - name: Newman report
        if: always()
        uses: actions/upload-artifact@v7.0.0
